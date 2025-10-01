@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": "./",
+    "paths": {
+      "@support/*": ["cypress/support/*"],
+      "@pages/*": ["cypress/support/page-objects/pages/*"],
+      "@components/*": ["cypress/support/page-objects/components/*"],
+      "@services/*": ["cypress/support/services/*"],
+      "@utilities/*": ["cypress/support/utilities/*"],
+      "@models/*": ["cypress/support/models/*"],
+      "@constants/*": ["cypress/support/constants/*"],
+      "@fixtures/*": ["cypress/fixtures/*"]
+    },
+    "types": ["cypress", "node", "@faker-js/faker"]
+  },
+  "include": ["cypress/**/*.ts", "cypress/**/*.js", "**/*.ts"],
+  "exclude": ["node_modules", "cypress/reports", "cypress/screenshots", "cypress/videos", "cypress/downloads"]
+}

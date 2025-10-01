@@ -1,0 +1,46 @@
+{
+  "environment": "local",
+  "baseUrl": "http://localhost:3000",
+  "apiBaseUrl": "http://localhost:3001",
+  "auth": {
+    "clientId": "local-client-id",
+    "clientSecret": "local-client-secret",
+    "tokenUrl": "http://localhost:3001/login",
+    "scope": "read write",
+    "grantType": "password"
+  },
+  "features": {
+    "enableApiLogging": true,
+    "enableScreenshots": true,
+    "enableRetries": true,
+    "enableVideoRecording": false,
+    "enableParallelExecution": false
+  },
+  "timeouts": {
+    "pageLoad": 30000,
+    "apiRequest": 15000,
+    "elementWait": 10000,
+    "defaultCommand": 8000
+  },
+  "users": {
+    "admin": {
+      "username": "Heath93",
+      "password": "s3cret",
+      "role": "administrator"
+    },
+    "user": {
+      "username": "Arvilla_Hegmann",
+      "password": "s3cret",
+      "role": "standard_user"
+    },
+    "readonly": {
+      "username": "Dina20",
+      "password": "s3cret",
+      "role": "read_only"
+    }
+  },
+  "testData": {
+    "enableDataGeneration": true,
+    "preserveTestData": false
+  }
+}

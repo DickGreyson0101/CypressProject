@@ -1,0 +1,42 @@
+{
+  "environment": "dev",
+  "baseUrl": "https://dev.cypress-test.example.com",
+  "apiBaseUrl": "https://api-dev.cypress-test.example.com/v1",
+  "auth": {
+    "clientId": "${DEV_CLIENT_ID}",
+    "clientSecret": "${DEV_CLIENT_SECRET}",
+    "tokenUrl": "https://auth-dev.cypress-test.example.com/oauth/token",
+    "scope": "api:read api:write",
+    "grantType": "client_credentials"
+  },
+  "features": {
+    "enableApiLogging": true,
+    "enableScreenshots": true,
+    "enableRetries": true,
+    "enableVideoRecording": false,
+    "enableParallelExecution": false
+  },
+  "timeouts": {
+    "pageLoad": 45000,
+    "apiRequest": 20000,
+    "elementWait": 15000,
+    "defaultCommand": 12000
+  },
+  "users": {
+    "admin": {
+      "username": "${DEV_ADMIN_USERNAME}",
+      "password": "${DEV_ADMIN_PASSWORD}",
+      "role": "administrator"
+    },
+    "user": {
+      "username": "${DEV_USER_USERNAME}",
+      "password": "${DEV_USER_PASSWORD}",
+      "role": "standard_user"
+    }
+  },
+  "testData": {
+    "enableDataGeneration": true,
+    "preserveTestData": true,
+    "cleanupAfterTests": false
+  }
+}

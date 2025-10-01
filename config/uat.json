@@ -1,0 +1,42 @@
+{
+  "environment": "uat",
+  "baseUrl": "https://uat.cypress-test.example.com",
+  "apiBaseUrl": "https://api-uat.cypress-test.example.com/v1",
+  "auth": {
+    "clientId": "${UAT_CLIENT_ID}",
+    "clientSecret": "${UAT_CLIENT_SECRET}",
+    "tokenUrl": "https://auth-uat.cypress-test.example.com/oauth/token",
+    "scope": "api:read api:write",
+    "grantType": "client_credentials"
+  },
+  "features": {
+    "enableApiLogging": false,
+    "enableScreenshots": true,
+    "enableRetries": true,
+    "enableVideoRecording": false,
+    "enableParallelExecution": true
+  },
+  "timeouts": {
+    "pageLoad": 60000,
+    "apiRequest": 30000,
+    "elementWait": 20000,
+    "defaultCommand": 15000
+  },
+  "users": {
+    "admin": {
+      "username": "${UAT_ADMIN_USERNAME}",
+      "password": "${UAT_ADMIN_PASSWORD}",
+      "role": "administrator"
+    },
+    "user": {
+      "username": "${UAT_USER_USERNAME}",
+      "password": "${UAT_USER_PASSWORD}",
+      "role": "standard_user"
+    }
+  },
+  "testData": {
+    "enableDataGeneration": false,
+    "preserveTestData": true,
+    "cleanupAfterTests": false
+  }
+}

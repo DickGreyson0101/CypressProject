@@ -1,0 +1,67 @@
+{
+  "name": "cypress-test",
+  "version": "1.0.0",
+  "description": "Cypress TypeScript Cucumber Testing Framework",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:dev": "cypress run --env environment=dev",
+    "test:uat": "cypress run --env environment=uat",
+    "test:prod": "cypress run --env environment=prod",
+    "open:report": "start cypress/reports/cucumber-html-report.html",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,md}\"",
+    "type-check": "tsc --noEmit",
+    "quality-check": "npm run type-check && npm run lint && npm run format:check"
+  },
+  "keywords": [
+    "cypress",
+    "typescript",
+    "cucumber",
+    "bdd",
+    "testing",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^23.2.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+    "@faker-js/faker": "^10.0.0",
+    "@types/node": "^24.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "cypress": "^15.3.0",
+    "cypress-terminal-report": "^6.2.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^5.1.1",
+    "eslint-plugin-prettier": "^5.5.4",
+    "glob": "^11.0.3",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": [
+      "cypress/e2e/step-definitions/**/*.ts"
+    ],
+    "html": {
+      "enabled": false
+    },
+    "json": {
+      "enabled": false
+    },
+    "messages": {
+      "enabled": false
+    }
+  }
+}

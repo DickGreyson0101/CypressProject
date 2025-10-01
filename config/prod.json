@@ -1,0 +1,37 @@
+{
+  "environment": "prod",
+  "baseUrl": "https://cypress-test.example.com",
+  "apiBaseUrl": "https://api.cypress-test.example.com/v1",
+  "auth": {
+    "clientId": "${PROD_CLIENT_ID}",
+    "clientSecret": "${PROD_CLIENT_SECRET}",
+    "tokenUrl": "https://auth.cypress-test.example.com/oauth/token",
+    "scope": "api:read",
+    "grantType": "client_credentials"
+  },
+  "features": {
+    "enableApiLogging": false,
+    "enableScreenshots": false,
+    "enableRetries": true,
+    "enableVideoRecording": false,
+    "enableParallelExecution": true
+  },
+  "timeouts": {
+    "pageLoad": 90000,
+    "apiRequest": 45000,
+    "elementWait": 30000,
+    "defaultCommand": 20000
+  },
+  "users": {
+    "readonly": {
+      "username": "${PROD_READONLY_USERNAME}",
+      "password": "${PROD_READONLY_PASSWORD}",
+      "role": "read_only"
+    }
+  },
+  "testData": {
+    "enableDataGeneration": false,
+    "preserveTestData": true,
+    "cleanupAfterTests": false
+  }
+}
